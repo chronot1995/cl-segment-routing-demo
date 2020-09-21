@@ -1,5 +1,6 @@
 # Segment Routing Demo
 
+<<<<<<< HEAD
 Segment Routing Demo
 
 The first thing is to create a "Cumulus In the Cloud" Reference Topology within Cumulus Air. We will be presenting this demo using a subset of the overall cldemo2 topology.
@@ -158,3 +159,6 @@ ansible-playbook cumulus-segment-routing-relaxed.yml
 
 
 ### Errata
+=======
+### WORK IN PROGRESS ### 
+>>>>>>> 473a6d1b884fb032b0d6ccee94766232e47f418e
