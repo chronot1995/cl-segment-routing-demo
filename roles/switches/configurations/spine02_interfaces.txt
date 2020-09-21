@@ -1,0 +1,45 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*.intf
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+    # The primary network interface
+    address 10.1.1.2/32
+
+# The primary network interface
+auto eth0
+iface eth0 inet dhcp
+    vrf mgmt
+
+auto swp1
+iface swp1
+    mpls-enable yes
+
+auto swp2
+iface swp2
+    mpls-enable yes
+
+auto swp3
+iface swp3
+    mpls-enable yes
+
+auto swp4
+iface swp4
+    mpls-enable yes
+
+auto swp5
+iface swp5
+    link-down yes
+
+auto swp6
+iface swp6
+    link-down yes
+
+auto mgmt
+iface mgmt
+    address 127.0.0.1/8
+    address ::1/128
+    vrf-table auto

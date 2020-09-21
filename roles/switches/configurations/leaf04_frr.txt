@@ -1,0 +1,33 @@
+frr version 7.4+cl4u1
+frr defaults datacenter
+hostname leaf04
+log syslog informational
+zebra nexthop proto only
+service integrated-vtysh-config
+!
+router bgp 65014
+ bgp router-id 10.1.1.14
+ no bgp default ipv4-unicast
+ neighbor EBGP peer-group
+ neighbor EBGP remote-as external
+ neighbor swp51 interface peer-group EBGP
+ neighbor swp52 interface peer-group EBG
+ !
+ !
+ address-family ipv4 unicast
+  network 10.1.1.1/32 label-index 1
+  network 10.1.1.2/32 label-index 2
+  network 10.1.1.11/32 label-index 11
+  network 10.1.1.12/32 label-index 12
+  network 10.1.1.13/32 label-index 13
+  network 10.1.1.14/32 label-index 14
+ exit-address-family
+ !
+ address-family ipv4 labeled-unicast
+  neighbor EBGP activate
+ exit-address-family
+!
+mpls label global-block 100 200
+!
+line vty
+!
