@@ -11,7 +11,7 @@ router bgp 65013
  neighbor EBGP peer-group
  neighbor EBGP remote-as external
  neighbor swp51 interface peer-group EBGP
- neighbor swp52 interface peer-group EBG
+ neighbor swp52 interface peer-group EBGP
  !
  !
  address-family ipv4 unicast

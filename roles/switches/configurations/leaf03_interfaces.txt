@@ -42,6 +42,14 @@ auto swp52
 iface swp52
     mpls-enable yes
 
+auto swp53
+iface swp53
+    link-down yes
+
+auto swp54
+iface swp54
+    link-down yes
+
 auto mgmt
 iface mgmt
     address 127.0.0.1/8
