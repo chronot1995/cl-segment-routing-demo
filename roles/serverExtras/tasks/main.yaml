@@ -18,7 +18,7 @@
     state: present
 
 - name: Add Relaxed MPLS LSR Routes from server01 to server04
-  command: ip route add 192.168.44.222/32 encap mpls 101 via inet 192.168.11.1
+  command: ip route add 192.168.44.111/32 encap mpls 101 via inet 192.168.11.1
   when: inventory_hostname == "server01"
 
 - name: Add Relaxed MPLS LSR Routes from server04 to server01
@@ -30,7 +30,7 @@
   when: inventory_hostname == "server02"
 
 - name: Add Strict MPLS LSR Routes to from server05 to server02
-  command: ip route add 192.168.22.111/32 encap mpls 102/113/101/112 via inet 192.168.55.1
+  command: ip route add 192.168.22.222/32 encap mpls 102/113/101/112 via inet 192.168.55.1
   when: inventory_hostname == "server05"
 
 - name: Flush Handlers, best practice
