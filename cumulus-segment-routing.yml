@@ -7,8 +7,8 @@
   roles:
   - switches
 
-#- hosts: servers
-#  become: true
-#  roles:
-#  - servers
-#  - serverExtras
+- hosts: servers
+  become: true
+  roles:
+  - servers
+  - serverExtras

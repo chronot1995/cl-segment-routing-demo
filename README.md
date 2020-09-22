@@ -158,4 +158,14 @@ ansible-playbook cumulus-segment-routing-relaxed.yml
 
 
 ### Errata
-=======
+
+Remove Strict LSR routes:
+
+```
+ip route del 192.168.22.222/32 encap mpls 104/105/103 via inet 192.168.11.1
+```
+
+Remove Relaxed LSR routes:
+```
+ip route del 192.168.22.222/32 encap mpls 103 via inet 192.168.11.1
+```
