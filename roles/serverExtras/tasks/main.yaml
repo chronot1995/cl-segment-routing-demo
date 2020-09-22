@@ -4,6 +4,7 @@
   apt:
     name: traceroute
     update_cache: yes
+    latest: yes
 
 ## Specific to Ubuntu 18 LTS:
 #- name: Remove ifupdown1 and netplan
