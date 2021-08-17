@@ -5,10 +5,10 @@
 - hosts: switches
   become: true
   roles:
-  - switches
+    - { role: switches, tags: ["switches"] }
 
 - hosts: servers
   become: true
   roles:
-  - servers
-  - serverExtras
+    - { role: servers, tags: ["servers"] }
+    - { role: serverExtras, tags: ["serverExtras"] }
