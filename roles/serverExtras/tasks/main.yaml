@@ -1,5 +1,4 @@
 ---
-
 - name: Install traceroute
   apt:
     name: traceroute
@@ -11,6 +10,10 @@
 #  apt:
 #    name: ['ifupdown','ifenslave','netplan.io']
 #    state: absent
+
+- name: Install Extra Kernel Modules
+  apt:
+    name: linux-modules-extra-{{ ansible_kernel }}
 
 ## Add the mpls_iptunnel module
 - modprobe:
