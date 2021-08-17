@@ -5,6 +5,10 @@
 auto lo
 iface lo inet loopback
 
+auto eth0
+iface eth0 inet dhcp
+    post-up sysctl -w net.ipv6.conf.eth0.accept_ra=2
+
 auto eth1
 iface eth1 inet static
   address {{node[inventory_hostname]["ports"]["eth1"]["ip"]}}
