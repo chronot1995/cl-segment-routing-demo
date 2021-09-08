@@ -7,7 +7,7 @@ source /etc/network/interfaces.d/*.intf
 auto lo
 iface lo inet loopback
     # The primary network interface
-    address 10.1.1.2/32
+    address 10.1.1.1/32
 
 # The primary network interface
 auto eth0
@@ -16,27 +16,19 @@ iface eth0 inet dhcp
 
 auto swp1
 iface swp1
+    alias to-r4
     mpls-enable yes
 
 auto swp2
 iface swp2
+    alias to-r2
     mpls-enable yes
 
-auto swp3
-iface swp3
+auto swp10
+iface swp10
+    alias to-host1
+    address 192.168.11.1/24
     mpls-enable yes
-
-auto swp4
-iface swp4
-    mpls-enable yes
-
-auto swp5
-iface swp5
-    link-down yes
-
-auto swp6
-iface swp6
-    link-down yes
 
 auto mgmt
 iface mgmt

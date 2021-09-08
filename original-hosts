@@ -4,6 +4,19 @@
 #    using topology data
 
 [switches]
+#oob-mgmt-switch
+spine01
+spine02
+#spine03
+#spine04
+#fw1
+#fw2
+leaf01
+leaf02
+leaf03
+leaf04
+#border01
+#border02
 r1
 r2
 r3
@@ -11,8 +24,15 @@ r4
 r5
 
 [servers]
-host1
-host2
+#oob-mgmt-server ansible_host=192.168.200.1
+server01
+server02
+#server03
+server04
+server05
+#server06
+#server07
+#server08
 
 [all:vars]
 ansible_user=cumulus

@@ -1,0 +1,34 @@
+graph srdemo {
+   
+   "fake" [function="fake"]
+   "oob-mgmt-server"  [function="oob-server" cpu="2" memory="2048"]
+   "oob-mgmt-switch"  [function="oob-switch" mgmt_ip="192.168.200.251"]
+
+   "r1" [function="leaf" version="4.3.0" mgmt_ip="192.168.200.21" ports="32"]
+   "r2" [function="leaf" version="4.3.0" mgmt_ip="192.168.200.22" ports="32"]
+   "r3" [function="leaf" version="4.3.0" mgmt_ip="192.168.200.23" ports="32"]
+   "r4" [function="leaf" version="4.3.0" mgmt_ip="192.168.200.24" ports="32"]
+   "r5" [function="leaf" version="4.3.0" mgmt_ip="192.168.200.25" ports="32"]
+   
+   "host1" [function="host" os="generic/ubuntu1804" mgmt_ip="192.168.200.31" nic_model="e1000"]
+   "host2" [function="host" os="generic/ubuntu1804" mgmt_ip="192.168.200.32" nic_model="e1000"]
+
+   "r1":"swp1" -- "r4":"swp1"
+   "r1":"swp2" -- "r2":"swp1"
+   "r2":"swp2" -- "r5":"swp2"
+   "r2":"swp3" -- "r3":"swp1"
+   "r3":"swp2" -- "r5":"swp3"
+   "r4":"swp2" -- "r5":"swp1"
+
+   "r1":"swp10" -- "host1":"eth1"
+   "r3":"swp10" -- "host2":"eth1"
+
+   "oob-mgmt-server":"eth1" -- "oob-mgmt-switch":"swp1"
+   "r1":"eth0" -- "oob-mgmt-switch":"swp11" [left_mac="44:38:39:22:01:7a"]
+   "r2":"eth0" -- "oob-mgmt-switch":"swp12" [left_mac="44:38:39:22:01:78"]
+   "r3":"eth0" -- "oob-mgmt-switch":"swp13" [left_mac="44:38:39:22:01:84"]
+   "r4":"eth0" -- "oob-mgmt-switch":"swp14" [left_mac="44:38:39:22:01:8a"]
+   "r5":"eth0" -- "oob-mgmt-switch":"swp15" [left_mac="44:38:39:22:01:82"]
+   "host1":"eth0" -- "oob-mgmt-switch":"swp21" [left_mac="44:38:39:22:01:7e"]
+   "host2":"eth0" -- "oob-mgmt-switch":"swp22" [left_mac="44:38:39:22:01:6e"]
+}
