@@ -5,7 +5,7 @@
     dest: /etc/network/interfaces
     backup: yes
     notify: reload networking
-  when: (inventory_hostname == "server01") or (inventory_hostname == "server04")
+  when: (inventory_hostname == "host1")
 
 - name: Copy server02 and server05 interfaces configuration
   template:
@@ -13,7 +13,7 @@
     dest: /etc/network/interfaces
     backup: yes
     notify: reload networking
-  when: (inventory_hostname == "server02") or (inventory_hostname == "server05")
+  when: (inventory_hostname == "host2")
 
 - name: Sleep for server to disconnect
   pause:
