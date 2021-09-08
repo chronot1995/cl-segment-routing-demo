@@ -24,16 +24,16 @@
   command: ip route add 192.168.22.222/32 encap mpls 103 via inet 192.168.11.1
   when: inventory_hostname == "host1"
 
-- name: Add Relaxed MPLS LSR Routes from host1 to host2
+- name: Add Relaxed MPLS LSR Routes from host2 to host1
   command: ip route add 192.168.11.111/32 encap mpls 101 via inet 192.168.22.1
   when: inventory_hostname == "host2"
 
 # - name: Add Strict MPLS LSR Routes from host1 to host2
-#   command: ip route add 192.168.22.222/32 encap mpls 101/104/105/103 via inet 192.168.55.1
+#   command: ip route add 192.168.22.222/32 encap mpls 101/104/105/103 via inet 192.168.11.1
 #   when: inventory_hostname == "host1"
 
 # - name: Add Strict MPLS LSR Routes from host2 to host1
-#   command: ip route add 192.168.55.222/32 encap mpls 103/102/101 via inet 192.168.22.1
+#   command: ip route add 192.168.11.111/32 encap mpls 103/102/101 via inet 192.168.22.1
 #   when: inventory_hostname == "host2"
 
 - name: Flush Handlers, best practice
