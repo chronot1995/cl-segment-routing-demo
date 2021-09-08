@@ -1,32 +1,16 @@
+<!-- Air:Tour -->
+
 # Segment Routing Demo
 
 Description:
 
-This demo will use the cldemo2 topology and create a Relaxed LSR path for server01 to ping server04 and a Strict LSR path for server02 to ping server05.
+This demo will create a Relaxed LSR path for host1 to ping host2 across five Cumulus Linux devices. This demo uses the same layout and schema as the Cumulus docs. The diagram below links directly to the topology in the Cumulus docs.
 
 ### Network Diagram:
 
-![Network Diagram](https://gitlab.com/nvidia-networking/systems-engineering/poc-support/segment-routing-demo/-/tree/master/documentation/cldemo2-sr.png)
+![Network Diagram](https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-43/Layer-3/Routing/Segment-Routing/#example-configuration)
 
-1. Copy the gitlab repo unto the oob-mgmt-server:
-
-   ```
-   git clone https://gitlab.com/nvidia-networking/systems-engineering/poc-support/segment-routing-demo
-   ```
-
-2. Change directories to the following
-
-   ```
-   cd segment-routing-demo
-   ```
-
-3. Run the following:
-
-   ```
-   ansible-playbook segment-routing.yml
-   ```
-
-This will setup an MPLS BGP overlay between the leaf01-04 and spine01-02. The remaining links in the topology to these elements will be disabled to avoid any issues.
+<!-- Air:Tour -->
 
 ### Troubleshooting
 
