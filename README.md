@@ -1,4 +1,4 @@
-<!-- Air:Tour -->
+<!-- AIR:tour -->
 
 # Segment Routing Demo
 
@@ -10,7 +10,7 @@ This demo will create a Relaxed LSR path for host1 to ping host2 across five Cum
 
 ![Network Diagram](https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-43/Layer-3/Routing/Segment-Routing/#example-configuration)
 
-<!-- Air:Tour -->
+<!-- AIR:tour -->
 
 ### Troubleshooting
 
