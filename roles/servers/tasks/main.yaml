@@ -1,19 +1,19 @@
 ---
-- name: Copy server01 and server04 interfaces configuration
+- name: Copy host1 interfaces configuration
   template:
     src: interfaces-odd.j2
     dest: /etc/network/interfaces
     backup: yes
     notify: reload networking
-  when: (inventory_hostname == "host1")
+  when: (ansible_hostname == "host1")
 
-- name: Copy server02 and server05 interfaces configuration
+- name: Copy host2 interfaces configuration
   template:
     src: interfaces-even.j2
     dest: /etc/network/interfaces
     backup: yes
     notify: reload networking
-  when: (inventory_hostname == "host2")
+  when: (ansible_hostname == "host2")
 
 - name: Sleep for server to disconnect
   pause:
