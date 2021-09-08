@@ -20,21 +20,21 @@
     name: mpls_iptunnel
     state: present
 
-- name: Add Relaxed MPLS LSR Routes from server01 to server04
-  command: ip route add 192.168.44.111/32 encap mpls 113 via inet 192.168.11.1
-  when: inventory_hostname == "server01"
+- name: Add Relaxed MPLS LSR Routes from host1 to host2
+  command: ip route add 192.168.22.222/32 encap mpls 103 via inet 192.168.11.1
+  when: inventory_hostname == "host1"
 
-- name: Add Relaxed MPLS LSR Routes from server04 to server01
-  command: ip route add 192.168.11.111/32 encap mpls 111 via inet 192.168.44.1
-  when: inventory_hostname == "server04"
+- name: Add Relaxed MPLS LSR Routes from host1 to host2
+  command: ip route add 192.168.11.111/32 encap mpls 101 via inet 192.168.22.1
+  when: inventory_hostname == "host2"
 
-- name: Add Strict MPLS LSR Routes to from server02 to server05
-  command: ip route add 192.168.55.222/32 encap mpls 101/113/102/114 via inet 192.168.22.1
-  when: inventory_hostname == "server02"
+# - name: Add Strict MPLS LSR Routes from host1 to host2
+#   command: ip route add 192.168.22.222/32 encap mpls 101/104/105/103 via inet 192.168.55.1
+#   when: inventory_hostname == "host1"
 
-- name: Add Strict MPLS LSR Routes to from server05 to server02
-  command: ip route add 192.168.22.222/32 encap mpls 102/113/101/112 via inet 192.168.55.1
-  when: inventory_hostname == "server05"
+# - name: Add Strict MPLS LSR Routes from host2 to host1
+#   command: ip route add 192.168.55.222/32 encap mpls 103/102/101 via inet 192.168.22.1
+#   when: inventory_hostname == "host2"
 
 - name: Flush Handlers, best practice
   meta: flush_handlers
