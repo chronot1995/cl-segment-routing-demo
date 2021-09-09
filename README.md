@@ -8,7 +8,7 @@ This demo will create a Relaxed LSR path for host1 to ping host2 across five Cum
 
 ### Network Diagram:
 
-![Network Diagram](https://docs.nvidia.com/networking-ethernet-software/cumulus-linux-43/Layer-3/Routing/Segment-Routing/#example-configuration)
+![Network Diagram](https://docs.nvidia.com/networking-ethernet-software/images/cumulus-linux/segment-routing-example.png)
 
 <!-- AIR:tour -->
 
