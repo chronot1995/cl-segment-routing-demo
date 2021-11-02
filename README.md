@@ -10,8 +10,6 @@ This demo will create a Relaxed LSR path for host1 to ping host2 across five Cum
 
 ![Network Diagram](https://raw.githubusercontent.com/CumulusNetworks/docs/stage/static/images/cumulus-linux/segment-routing-example.png)
 
-<!-- AIR:tour -->
-
 ### Troubleshooting
 
 Helpful FRR and MPLS troubleshooting commands:
@@ -145,3 +143,4 @@ sudo ip route add 192.168.11.111/32 encap mpls 101 via inet 192.168.22.1
 ```
 
 The above need to be removed before executing the playbook again.
+<!-- AIR:tour -->
